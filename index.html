@@ -2,32 +2,44 @@
 <html lang="en-IE">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="referrer" content="no-referrer">
-<meta name="color-scheme" content="light dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://ygncvcnuedematspfnyy.supabase.co https://cksibelhbijkzsoryffk.supabase.co; base-uri 'none'; form-action 'none'">
-<title>Match availability</title>
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2F4F7" media="(prefers-color-scheme: light)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://ygncvcnuedematspfnyy.supabase.co https://cksibelhbijkzsoryffk.supabase.co; base-uri 'none'; form-action 'none'">
+<title>Match availability · SquadPad</title>
+<link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="page.css">
 <script defer src="page.js"></script>
 </head>
 <body>
-<header class="brand"><img src="logo.png" alt="SquadPad" width="144" height="36"></header>
-<main id="main">
-<h1>Match availability</h1>
-<noscript><p>This page needs JavaScript to send your reply. You can also reply in the app.</p></noscript>
+<div class="shell">
+<header class="top">
+<picture>
+<source srcset="logo-black.svg" media="(prefers-color-scheme: light)">
+<img src="logo-white.svg" alt="SquadPad" width="152" height="38">
+</picture>
+</header>
+<main id="main" class="card">
+<p class="eyebrow">Match availability</p>
+<h1>Can your player play?</h1>
+<noscript><p class="note">This page needs JavaScript to send your reply. You can also reply in the SquadPad app.</p></noscript>
 <form id="reply" hidden>
 <fieldset>
-<legend>Can your player play in the next match?</legend>
-<label class="choice"><input type="radio" name="answer" value="yes"> Available</label>
-<label class="choice"><input type="radio" name="answer" value="no"> Not available</label>
+<legend class="visually-hidden">Can your player play in the next match?</legend>
+<label class="choice choice-yes"><input type="radio" name="answer" value="yes"><span class="mark" aria-hidden="true"></span><span class="choice-text"><strong>Available</strong><span>Count them in</span></span></label>
+<label class="choice choice-no"><input type="radio" name="answer" value="no"><span class="mark" aria-hidden="true"></span><span class="choice-text"><strong>Not available</strong><span>Not this time</span></span></label>
 </fieldset>
 <button id="confirm" type="submit">Confirm</button>
 </form>
 <p id="status" role="status" aria-live="polite">Reading your reply link…</p>
-<p class="app"><a id="open-app" hidden>Open in the app</a></p>
+<p class="app"><a id="open-app" hidden>Open in the SquadPad app</a></p>
 <p class="meta">No sign-in needed. Nothing is sent until you tap Confirm.</p>
 </main>
-<footer>Anyone with this link can reply for this player. Don't forward the email.</footer>
+<footer>Anyone with this link can reply for this player, so please don't forward the email.</footer>
+</div>
 </body>
 </html>

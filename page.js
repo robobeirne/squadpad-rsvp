@@ -97,6 +97,7 @@
       form.hidden = true;
       openApp.href = appLink(sent.answer);
       say(confirmation(data.current), false);
+      status.className = 'done';
       try { history.replaceState(null, '', location.pathname); } catch (e) { /* ignore */ }
       return;
     }
